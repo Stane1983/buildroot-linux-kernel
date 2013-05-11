@@ -656,7 +656,6 @@ static struct mtd_partition normal_partition_info_512M[] =
         .offset=MTDPART_OFS_APPEND,
         .size=MTDPART_SIZ_FULL,
     },
-#endif
 };
 static struct mtd_partition normal_partition_info_1G_OR_MORE[] = 
 {
