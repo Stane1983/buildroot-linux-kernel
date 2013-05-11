@@ -644,38 +644,13 @@ static struct mtd_partition normal_partition_info_512M[] =
 	{
         .name = "system",
         .offset = 32*1024*1024,
-#if (defined CONFIG_MACH_MESON_8726M_REFC03_ICS)
-        .size = 300*1024*1024,
-#else
         .size = 200*1024*1024,
-#endif
     },
     {
         .name = "cache",
-#if (defined CONFIG_MACH_MESON_8726M_REFC03_ICS)
-        .offset = 332*1024*1024,
-#else
         .offset = 232*1024*1024,
-#endif
         .size = 16*1024*1024,
     },
-#ifdef CONFIG_AML_NFTL
-   {
-        .name = "userdata",
-#if (defined CONFIG_MACH_MESON_8726M_REFC03_ICS)
-        .offset=348*1024*1024,
-        .size=112*1024*1024,
-#else
-        .offset=248*1024*1024,
-        .size=200*1024*1024,
-#endif
-    },
-    {
-		.name = "NFTL_Part",
-		.offset = MTDPART_OFS_APPEND,
-		.size = MTDPART_SIZ_FULL,
-	},
-#else
     {
         .name = "userdata",
         .offset=MTDPART_OFS_APPEND,
@@ -700,9 +675,9 @@ static struct mtd_partition normal_partition_info_1G_OR_MORE[] =
     },
 #endif
     {
-		.name = "aml_logo",
-		.offset = 8*1024*1024,
-		.size=8*1024*1024,
+	.name = "aml_logo",
+	.offset = 8*1024*1024,
+	.size=8*1024*1024,
     },
     {
         .name = "recovery",
@@ -717,43 +692,18 @@ static struct mtd_partition normal_partition_info_1G_OR_MORE[] =
 	{
         .name = "system",
         .offset = 32*1024*1024,
-#if (defined CONFIG_MACH_MESON_8726M_REFC03_ICS)
-        .size = 512*1024*1024,
-#else
         .size = 256*1024*1024,
-#endif
     },
     {
         .name = "cache",
-#if (defined CONFIG_MACH_MESON_8726M_REFC03_ICS)
-        .offset = 544*1024*1024,
-#else
         .offset = 288*1024*1024,
-#endif
         .size = 64*1024*1024,
     },
-#ifdef CONFIG_AML_NFTL
-    {
-        .name = "userdata",
-#if (defined CONFIG_MACH_MESON_8726M_REFC03_ICS)
-        .offset=608*1024*1024,
-#else
-        .offset=352*1024*1024,
-#endif
-        .size=300*1024*1024,
-    },
-       {
-		.name = "NFTL_Part",
-		.offset = MTDPART_OFS_APPEND,
-		.size = MTDPART_SIZ_FULL,
-	},
-#else
     {
         .name = "userdata",
         .offset=MTDPART_OFS_APPEND,
         .size=MTDPART_SIZ_FULL,
     },
-#endif
 };
 
 static struct mtd_partition normal_partition_info[] = 
