@@ -1135,7 +1135,7 @@ static void osd_late_resume(struct early_suspend *h)
 }
 #endif
 
-#ifdef CONFIG_MACH_MESON_STV_MBX_M3 //modifed by clei for resolution CONFIG_MACH_MESON_8726M_REFC03_ICS
+#if defined(CONFIG_MACH_MESON_STV_MBX_M3) || defined(CONFIG_MACH_MESON_8726M_REFC03_VISSON) //modifed by clei for resolution CONFIG_MACH_MESON_8726M_REFC03_ICS
 int  __init  get_resolution(char *str)
 {
     if(strncmp("480", str, 3) == 0)
